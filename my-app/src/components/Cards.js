@@ -3,20 +3,6 @@ import './cards.css'
 
 const Cards = (props) => {
 
-    let cardarr = [ {id: 1, name: "კომპანიის დასახება"},
-                    {id: 2, name: "საქმიანობის სფერო"},
-                    {id: 3, name: "ელექტრონული ფოსტა"},
-                    {id: 4, name: "ტელეფონის ნომერი"},
-                    {id: 5, name: "გამოფენა"},
-                    {id: 6, name: "მისამართი"},
-                    {id: 7, name: "საკონტაკტო პირი"},
-                    {id: 8, name: "კომპანიის ლოგო"},
-                    {id: 9, name: "ფაილის ატვირთვა"},
-                    {id: 10, name: "დამატებითი ინფორმაცია"},
-                    {id: 11, name: "სოციალური ან ვებსაიტი"}
-]
-
-
 /**ტელეფონის ნომერი ორის შეტანა რომ შეიძლებოდეს
  * მისამართი იურიდიული და ფაქტიური
  * გამოფენა თავისით ეწეროს დეფაულთათ
@@ -27,16 +13,65 @@ const Cards = (props) => {
 
     return (
         <div className='card'>
-            <div className='title'><h1>{props.registr}</h1></div>
+            <div className='title'><h2>სარეგისტრაციო ფორმა</h2></div>
             <form>
             <div className='inputcard'>
-            {cardarr.map((user) => (
             <div className="user">
-            <input type='text' name='participant' required="required">
+            <input type='text' name='participant' required="required" className='inputData'>
             </input>
-            <span>{user.name}</span>
+            <span>კომპანიის დასახება</span>
             </div>
-                                    ))}
+            <div className="user">
+            <input type='text' name='category' required="required" className='inputData'>
+            </input>
+            <span>საქმიანობის სფერო</span>
+            </div>
+            <div className="user">
+            <input type="email" id="email" name="email" required="required" className='inputData'>
+            </input>
+            <span>ელექტრონული ფოსტა</span>
+            </div>
+            <div className="user">
+            <input type="tel" pattern="[0-9]+" title="Please enter only numbers" required="required" className='inputData'>
+            </input>
+            <span>ტელეფონის ნომერი</span>
+            </div>
+            <div className="user">
+            <input type="tel" pattern="[0-9]+" title="Please enter only numbers" required="required" className='inputData'>
+            </input>
+            <span>მობილური ტელეფონი</span>
+            </div>
+            <div className="user">
+            <input type='text' name='address' required="required" className='inputData'>
+            </input>
+            <span>ფაქტობრივი მისამართი</span>
+            </div>
+            <div className="user">
+            <input type='text' name='address' required="required" className='inputData'>
+            </input>
+            <span>იურიდიული მისამართი</span>
+            </div>
+            <div className="user">
+            <input type='text' name='contact_person' required="required"className='inputData'>
+            </input>
+            <span>საკონტაკტო პირი</span>
+            </div>
+            <div className="user">
+            <input type='text' name='web' required="required" className='inputData'>
+            </input>
+            <span>სოციალური ან ვებსაიტი</span>
+            </div>
+            <div className="user">
+            <input type='text' name='text' required="required" className='inputData'>
+            </input>
+            <span>დამატებითი ინფორმაცია</span>
+            </div>
+            <input type="file"  className='inputFile' id='uploadBtn1'>
+            </input>
+            <label className='customFileInput' for="uploadBtn1">ფაილის ატვირთვა</label>
+            <input type="file"  className='inputFile' id='uploadBtn2'>
+            </input>
+            <label className='customFileInput' for="uploadBtn2">ფაილის ატვირთვა</label>
             </div>
             <input type='submit' className='submit' value="გაგზავნა"/>
             </form>
