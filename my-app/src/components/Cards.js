@@ -1,7 +1,7 @@
 import React from 'react';
 import './cards.css'
 
-const Cards = () => {
+const Cards = (props) => {
 
     let cardarr = [ {id: 1, name: "კომპანიის დასახება"},
                     {id: 2, name: "საქმიანობის სფერო"},
@@ -27,7 +27,7 @@ const Cards = () => {
 
     return (
         <div className='card'>
-            <div className='title'><h1>სარეგისტრაციო ფორმა</h1></div>
+            <div className='title'><h1>{props.registr}</h1></div>
             <form>
             <div className='inputcard'>
             {cardarr.map((user) => (
