@@ -74,6 +74,7 @@
     background-color: #1d2b;
     cursor: pointer;
     transition: 0.5s;
+    font-size: 1em;
 }
 
 .submit:hover {
