@@ -4,8 +4,6 @@ import './cards.css'
 const Cards = (props) => {
 
 /**ტელეფონის ნომერი ორის შეტანა რომ შეიძლებოდეს
- * მისამართი იურიდიული და ფაქტიური
- * გამოფენა თავისით ეწეროს დეფაულთათ
  * გადასაკეთებელია ფაილების ატვირთვის ღილაკი
  * პოპაფის ფანჯარა სადაც წარმატებას ან უარყოფის სტატუს უჩვენებს
  * 
@@ -13,7 +11,9 @@ const Cards = (props) => {
 
     return (
         <div className='card'>
-            <div className='title'><h2>სარეგისტრაციო ფორმა</h2></div>
+            <div className='title'><h3>სარეგისტრაციო ფორმა</h3>
+            <p>აგრონომიული გამოფენა</p>
+            </div>
             <form>
             <div className='inputcard'>
             <div className="user">
@@ -68,7 +68,7 @@ const Cards = (props) => {
             </div>
             <input type="file"  className='inputFile' id='uploadBtn1'>
             </input>
-            <label className='customFileInput' for="uploadBtn1">ფაილის ატვირთვა</label>
+            <label className='customFileInput' for="uploadBtn1">ლოგოს ატვირთვა</label>
             <input type="file"  className='inputFile' id='uploadBtn2'>
             </input>
             <label className='customFileInput' for="uploadBtn2">ფაილის ატვირთვა</label>
