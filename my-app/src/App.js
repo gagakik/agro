@@ -1,14 +1,20 @@
-import Cards from './components/Cards';
-import Api from './components/Api'
+
 import './App.css';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-<Cards/>
-<Api/>
+ <div className='navbar'>
+            <nav>
+                <ul>
+                    <li><Link className='navi' to='/'>Home</Link></li>
+                    <li><Link className='navi' to='/api'>Company List</Link></li>
+                    <li><Link className='navi' to='/cards'>New Registration</Link></li>
+                </ul>
+            </nav>
+            </div>
     </div>
   );
 }
-
 export default App;

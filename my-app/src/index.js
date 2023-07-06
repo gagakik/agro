@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import {HashRouter, Route, Routes} from 'react-router-dom';
 import App from './App';
+import Api from './components/Api';
+import Cards from './components/Cards';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <HashRouter>
+    <Routes>
+      <Route element={<App/>} path='/' exact="true"/>
+      <Route element={<Api/>} path='/api'/>
+      <Route element={<Cards/>} path='/cards'/>
+    </Routes>
+    </HashRouter>
 );
 
