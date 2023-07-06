@@ -1,4 +1,4 @@
-
+import './api.css'
 
 import React, {useEffect, useState} from 'react';
 
@@ -26,11 +26,16 @@ const Api = () => {
     }, []);
   
     return (
-      <div>
-        <h1>Data from Django:</h1>
+      <div className='info'>
+        <h1>ბაზიდან მიღებული სია</h1>
         <ul>
           {data.map((item) => (
-            <li key={item.id}>{item.id}, {item.participant}, {item.tel}</li>
+            <li className='fetchData' key={item.id}><p>{item.id}</p> <a href='/item.id'>{item.participant}</a> <p>{item.tel}</p>
+            <p>{item.mail}</p>
+            <input type='submit' name='edit' value="EDIT" className='edit'/>
+            <input type='submit' name='edit' value="SAVE" className='save'/>
+            <input type='submit' name='edit' value="DELETE" className='delete'/>
+            </li>
           ))}
         </ul>
       </div>

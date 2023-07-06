@@ -4,3 +4,43 @@
   align-items: center;
   justify-content: center;
 }
+
+.navbar {
+background-color: antiquewhite;
+display: flex;
+max-width: 375px;
+width: 100%;
+}
+
+nav {
+display: flex;
+
+}
+
+
+ul{
+  display: flex;
+  gap: 30px;
+  flex-direction: column;  
+}
+
+li{
+  list-style-type: none;
+}
+
+.navi{
+  border-radius: 5px;
+  display: block;
+  cursor: pointer;
+  background-color: aqua;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-transform: none;
+  color: black;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.navi:hover {
+  background-color: aquamarine;
+}

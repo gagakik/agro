@@ -5,6 +5,7 @@ import {HashRouter, Route, Routes} from 'react-router-dom';
 import App from './App';
 import Api from './components/Api';
 import Cards from './components/Cards';
+import Registration from './components/Registration';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +15,7 @@ root.render(
       <Route element={<App/>} path='/' exact="true"/>
       <Route element={<Api/>} path='/api'/>
       <Route element={<Cards/>} path='/cards'/>
+      <Route element={<Registration/>} path='/Registration'/>
     </Routes>
     </HashRouter>
 );

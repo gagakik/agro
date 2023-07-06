@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { Form } from "react-router-dom";
 import './cards.css'
 
-const Cards = (props) => {
-
+const Cards = () => {
     const [formData, setFormData] = useState({
         participant: '',
         category: '',
@@ -33,6 +33,7 @@ const Cards = (props) => {
             console.log(jsonData); // Response data
           } else {
             console.error('Request failed with status:', response.status);
+            alert(response.status)
           }
         } catch (err) {
           console.error(err);
@@ -46,77 +47,75 @@ const Cards = (props) => {
     return (
         <div className='card'>
             <div className='title'><h2>სარეგისტრაციო ფორმა</h2></div>
-            <form onSubmit={handleSubmit}>
+            <Form method="post" action="/events">
             <div className='inputcard'>
             <div className="user">
             <input type='text' name='participant' required="required" className='inputData' value={formData.participant}
-              onChange={handleChange}>
+              >
             </input>
             <span>კომპანიის დასახება</span>
             </div>
             <div className="user">
             <input type='text' name='category' required="required" className='inputData' value={formData.category}
-              onChange={handleChange}>
+              >
             </input>
             <span>საქმიანობის სფერო</span>
             </div>
             <div className="user">
             <input type="email" id="email" name="email" required="required" className='inputData' value={formData.email}
-              onChange={handleChange}>
+              >
             </input>
             <span>ელექტრონული ფოსტა</span>
             </div>
             <div className="user">
             <input type="tel" pattern="[0-9]+" title="Please enter only numbers" required="required" className='inputData' value={formData.tel}
-              onChange={handleChange}>
+              >
             </input>
             <span>ტელეფონის ნომერი</span>
             </div>
             <div className="user">
             <input type="tel" pattern="[0-9]+" title="Please enter only numbers" required="required" className='inputData' value={formData.tel}
-              onChange={handleChange}>
+              >
             </input>
             <span>მობილური ტელეფონი</span>
             </div>
             <div className="user">
-            <input type='text' name='address' required="required" className='inputData' value={formData.tel}
-              onChange={handleChange}>
+            <input type='text' name='address' required="required" className='inputData' value={formData.tel}>
             </input>
             <span>ფაქტობრივი მისამართი</span>
             </div>
             <div className="user">
             <input type='text' name='address' required="required" className='inputData' value={formData.tel}
-              onChange={handleChange}>
+              >
             </input>
             <span>იურიდიული მისამართი</span>
             </div>
             <div className="user">
             <input type='text' name='contact_person' required="required"className='inputData' value={formData.tel}
-              onChange={handleChange}>
+              >
             </input>
             <span>საკონტაკტო პირი</span>
             </div>
             <div className="user">
             <input type='text' name='web' required="required" className='inputData' value={formData.tel}
-              onChange={handleChange}>
+              >
             </input>
             <span>სოციალური ან ვებსაიტი</span>
             </div>
             <div className="user">
             <input type='text' name='text' required="required" className='inputData' value={formData.tel}
-              onChange={handleChange}>
+              >
             </input>
             <span>დამატებითი ინფორმაცია</span>
             </div>
             <input type="file"  className='inputFile' id='uploadBtn1'>
             </input>
             <label className='customFileInput' for="uploadBtn1">ლოგოს ატვირთვა</label>
-            <input type="file"  className='inputFile' id='uploadBtn2' value={formData.tel}
-              onChange={handleChange}/>
+            <input type="file"  className='inputFile' id='uploadBtn2' value={formData.tel}/>
             <label className='customFileInput' for="uploadBtn2">ფაილის ატვირთვა</label>
             </div>
             <input type='submit' className='submit' value="გაგზავნა" onChange={handleChange}/>
-            </form>
+            </Form>
         </div>
     );
 }
@@ -130,14 +129,3 @@ export default Cards;
 
 
 
-/*id INTEGER PIMERY KEY,
-participant TEXT,
-address TEXT,
-tel TEXT NOT NULL,
-mail TEXT NOT NULL,
-exhibition,
-contact_person,
-logo BLOB,
-file BLOB,
-price REAL,
-status INTEGER NOT NULL DEFAULT 0*/
