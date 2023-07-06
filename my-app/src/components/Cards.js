@@ -68,7 +68,7 @@ const Cards = (props) => {
             </div>
             <input type="file"  className='inputFile' id='uploadBtn1'>
             </input>
-            <label className='customFileInput' for="uploadBtn1">ფაილის ატვირთვა</label>
+            <label className='customFileInput' for="uploadBtn1">ლოგოს ატვირთვა</label>
             <input type="file"  className='inputFile' id='uploadBtn2'>
             </input>
             <label className='customFileInput' for="uploadBtn2">ფაილის ატვირთვა</label>
