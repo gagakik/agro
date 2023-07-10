@@ -9,21 +9,21 @@ const Registration = () => {
     tel: '',
     mob: '',
     email: '',
-    exhibition: '',
+    exhibition: 'agro', // Default value for exhibition
     contact_person: '',
     price: '',
     payed: '',
-    status: '',
+    status: false, // Default value for status (checkbox)
     employer: '',
-    data: '',
-    logo: '',
-    file: '',
+    date: '', // Renamed "data" to "date" for consistency
+    logo: null, // Changed the default value to null for file inputs
+    file: null, // Changed the default value to null for file inputs
   });
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Send the form data to the server
+    // Send the form data to the server http://10.168.133.11:8000/user/
     fetch('http://10.168.133.11:8000/user/', {
       method: 'POST',
       headers: {
@@ -38,40 +38,55 @@ const Registration = () => {
         // Additional logic or state updates
       })
       .catch((error) => {
-        alert("ver gaigzavna")
+        alert('An error occurred while submitting the form.');
         console.error('Error:', error);
       });
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, type, checked, files } = event.target;
+    // Handle different input types appropriately
+    const newValue = type === 'checkbox' ? checked : type === 'file' ? files[0] : value;
+
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: newValue,
     }));
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        {/* Your form fields go here */}
+        <label>participant</label>
         <input type="text" name="participant" value={formData.participant} onChange={handleChange} />
+        <label>address1</label>
         <input type="text" name="address1" value={formData.address1} onChange={handleChange} />
+        <label>address2</label>
         <input type="text" name="address2" value={formData.address2} onChange={handleChange} />
+        <label>tel</label>
         <input type="text" name="tel" value={formData.tel} onChange={handleChange} />
+        <label>mob</label>
         <input type="text" name="mob" value={formData.mob} onChange={handleChange} />
-        <input type="text" name="email" value={formData.email} onChange={handleChange} />
-        <input type="text" name="exhibition" value='agro' onChange={handleChange} />
+        <label>email</label>
+        <input type="email" name="email" value={formData.email} onChange={handleChange} />
+        <label>exhibition</label>
+        <input type="text" name="exhibition" value={formData.exhibition} defaultValue={'agro'} onChange={handleChange} disabled/>
+        <label>contact_person</label>
         <input type="text" name="contact_person" value={formData.contact_person} onChange={handleChange} />
+        <label>price</label>
         <input type="text" name="price" value={formData.price} onChange={handleChange} />
+        <label>payed</label>
         <input type="text" name="payed" value={formData.payed} onChange={handleChange} />
-        <input type="checkbox" name="status" value={formData.status} onChange={handleChange} />
-        <input type="text" name="employer" value={formData.employer} onChange={handleChange} />
-        <input type="date" name="data" value={formData.data} onChange={handleChange} />
-        <input type="file" name="logo" value={formData.logo} onChange={handleChange} />
-        <input type="file" name="file" value={formData.file} onChange={handleChange} />
-        {/* Repeat the above line for each form field */}
-        
+        <label>status</label>
+        <input type="checkbox" name="status" checked={formData.status} onChange={handleChange} />
+        <label>employer</label>
+        <input type="text" name="employer" value={formData.employer} defaultValue={'Gaga'} onChange={handleChange} disabled/>
+        <label>date</label>
+        <input type="date" name="date" value={formData.date} onChange={handleChange} />
+        <label>logo</label>
+        <input type="file" name="logo" onChange={handleChange} />
+        <label>file</label>
+        <input type="file" name="file" onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
     </div>

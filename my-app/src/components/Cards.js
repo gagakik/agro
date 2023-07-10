@@ -114,7 +114,7 @@ const Cards = () => {
             <input type="file"  className='inputFile' id='uploadBtn2' value={formData.tel}/>
             <label className='customFileInput' for="uploadBtn2">ფაილის ატვირთვა</label>
             </div>
-            <input type='submit' className='submit' value="გაგზავნა" onChange={handleChange}/>
+            <input type='submit' className='submit' value="გაგზავნა" onChange={handleSubmit}/>
             </Form>
         </div>
     );
