@@ -17,45 +17,7 @@
     gap: 20px;
 }
 
-.edit, .save  {
-    display: inline-block;
-    text-transform: uppercase;
-    color:#fff;
-    background-color: #2a85af;
-    text-align: center;
-    padding: 10px 20px;
-    letter-spacing: 1.5px;
-    user-select: none;
-    cursor: pointer;
-    box-shadow: 5px 15px 25px rgba(0, 0, 0,0.25);
-    border-radius: 5px;
-    border: none;
-}
 
-.edit:hover{
-    background-color: #7e939d;
-}
-.save:hover{
-    background-color: #7e939d;
-}
-.delete:hover{
-    background-color: #7e939d;
-}
-
-.delete {
-    display: inline-block;
-    text-transform: uppercase;
-    color:#fff;
-    background-color: #b14141;
-    text-align: center;
-    padding: 10px 20px;
-    letter-spacing: 1.5px;
-    user-select: none;
-    cursor: pointer;
-    box-shadow: 5px 15px 25px rgba(0, 0, 0,0.25);
-    border-radius: 5px;
-    border: none;
-}
 
 .fetchData {
     background-color: #7e939d;

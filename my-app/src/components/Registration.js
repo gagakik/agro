@@ -55,7 +55,7 @@ const Registration = () => {
   };
 
   return (
-    <div>
+    <div className='container'>
       <form onSubmit={handleSubmit}>
         <label>participant</label>
         <input type="text" name="participant" value={formData.participant} onChange={handleChange} />

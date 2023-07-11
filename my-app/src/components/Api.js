@@ -4,11 +4,11 @@ import React, {useEffect, useState} from 'react';
 
 const Api = () => {
     const [data, setData] = useState([]);
-//http://10.168.133.11:8000/user/
+//http://213.131.37.250:8889/user/
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await fetch('http://10.168.133.11:8000/user/', {
+            const response = await fetch('http://213.131.37.250:8889/user/', {
               headers: {
                 'Content-Type': 'application/json',
                 'Referer':'http://localhost:3000/',
@@ -24,6 +24,8 @@ const Api = () => {
   
       fetchData();
     }, []);
+
+    
   
     return (
       <div className='info'>

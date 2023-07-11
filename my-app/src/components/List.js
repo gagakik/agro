@@ -14,20 +14,28 @@ const List = (props) => {
         <label htmlFor="psearch">Search Participants:</label>
         <input type="text" id="psearch" name="psearch" />
       </div>
+      <div className='company_wrap'>
       <div className='compList'>
         <div className='Participants'>
           <p className='num'>1</p>
           <p className='num'>ltd Participants</p>
         </div>
-        <div className='contact'>
+        <button onClick={handleToggle} className='edit'>
+        {detal ? 'Detal Off' : 'Detal On'}</button>
+        {detal && <div className='slide'>
+          <input type='submit' name='edit' value="EDIT" className='edit'/>
+          <input type='submit' name='edit' value="SAVE" className='save'/>
+          <input type='submit' name='edit' value="DELETE" className='delete'/>
+        </div>
+        }
+      </div>
+      {detal && <div className='slide'>
           <p className='num'>Tel:</p>
           <p className='num'>email:</p>
           <p className='num'>Contact Person:</p>
         </div>
-        <button onClick={handleToggle}>{detal ? 'Turn Off' : 'Turn On'}</button>
-       
-      </div>
-      {detal && <div className='slide'>test</div>}
+        }
+    </div>
     </div>
   );
 }
