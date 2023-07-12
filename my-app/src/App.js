@@ -10,9 +10,7 @@ function App() {
                 <ul>
                     <li><Link className='navi' to='/'>Home</Link></li>
                     <li><Link className='navi' to='/api'>Company List</Link></li>
-                    <li><Link className='navi' to='/cards'>New Registration</Link></li>
                     <li><Link className='navi' to='/Registration'>Registration</Link></li>
-                    <li><Link className='navi' to='/List'>List</Link></li>
                 </ul>
             </nav>
             </div>
