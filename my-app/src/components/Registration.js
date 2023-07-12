@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Registration.css'
+import App from '../App';
+import Animation from '../components/animation'
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -11,11 +13,6 @@ const Registration = () => {
     mail: '',
     exhibition: 'agro', // Default value for exhibition
     contact_person: '',
-    price: '',
-    payed: '',
-    status: false, // Default value for status (checkbox)
-    employer: '',
-    date: '', // Renamed "data" to "date" for consistency
     logo: null, // Changed the default value to null for file inputs
     file: null, // Changed the default value to null for file inputs
   });
@@ -24,7 +21,7 @@ const Registration = () => {
     event.preventDefault();
 
     // Send the form data to the server http://10.168.133.11:8000/user/
-    fetch('http://10.168.133.11:8000/user/', {
+    fetch('http://213.131.37.250:8889/user/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -56,6 +53,8 @@ const Registration = () => {
 
   return (
     <div className='container'>
+    <App/>
+    <Animation>
     <div className='reglist'>
       <form onSubmit={handleSubmit}>
         <label>participant</label>
@@ -81,6 +80,7 @@ const Registration = () => {
         <button type="submit">Submit</button>
       </form>
       </div>
+      </Animation>
     </div>
   );
 };

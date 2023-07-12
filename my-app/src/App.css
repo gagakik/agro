@@ -1,46 +1,39 @@
-.App {
+.navbar {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-.navbar {
-background-color: antiquewhite;
-display: flex;
-max-width: 375px;
-width: 100%;
-}
-
-nav {
-display: flex;
-
-}
-
-
-ul{
+.navbar nav {
   display: flex;
-  gap: 30px;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
-li{
+.navbar nav ul {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar nav ul li {
   list-style-type: none;
 }
 
-.navi{
-  border-radius: 5px;
+.navi {
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
   display: block;
   cursor: pointer;
-  background-color: aqua;
-  padding: 10px 15px;
-  text-decoration: none;
-  text-transform: none;
-  color: black;
-  font-weight: 700;
-  font-size: 0.9rem;
+  background-color: rgb(18, 54, 90);
+  padding: 5px 15px;
+  border-radius: 10px;
+  width: 120px;
+  transition: 0.4s;
 }
 
+
 .navi:hover {
-  background-color: aquamarine;
+  background-color: rgb(132, 150, 168);
 }
