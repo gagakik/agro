@@ -12,10 +12,10 @@ const Api = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://213.131.37.250:8889/user/', {
+      const response = await fetch('http://10.168.133.11:8000/user/', {
         headers: {
           'Content-Type': 'application/json',
-          Referer: 'http://localhost:3000/',
+          
         },
       });
       const userReg = await response.json();
@@ -41,19 +41,18 @@ const Api = () => {
   const handleSave = async () => {
     try {
       const response = await fetch(
-        `http://213.131.37.250:8889/user/${details.id}`,
+        `http://10.168.133.11:8000/user/${details.id}`,
         {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
-            Referer: 'http://localhost:3000/',
           },
           body: JSON.stringify(details),
         }
       );
       if (response.ok) {
-        setEditMode(false);
         fetchData();
+        setEditMode(false);
       }
     } catch (err) {
       console.error(err);
@@ -63,12 +62,11 @@ const Api = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://213.131.37.250:8889/user/${id}`,
+        `http://10.168.133.11:8000/user/${id}`,
         {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
-            Referer: 'http://localhost:3000/',
           },
         }
       );
@@ -95,13 +93,14 @@ const Api = () => {
       <div className="info">
         <App />
         <h2>კომპანიების ჩამონათვალი</h2>
+        {data.length > 0 && <p className='lenght'>მონაწილეების რაოდენობა: {data.length}</p>}
         <Animation>
           <ul>
             {data.map((item) => (
               <div className="detals" key={item.id}>
                 <li className="fetchData">
                   <div className="segment">
-                    <h4>Participant:</h4>
+                    <h4>მონაწილე:</h4>
                     {!editMode && (
                       <a href={`/user/${item.id}`}>{item.participant}</a>
                     )}
@@ -115,7 +114,7 @@ const Api = () => {
                     )}
                   </div>
                   <div className="segment">
-                    <h4>Email:</h4>
+                    <h4>ელექტრონული ფოსტა:</h4>
                     {!editMode && <p>{item.mail}</p>}
                     {editMode && item.id === details.id && (
                       <input
@@ -127,7 +126,7 @@ const Api = () => {
                     )}
                   </div>
                   <div className="segment">
-                    <h4>Mobile Phone:</h4>
+                    <h4>მობილური:</h4>
                     {!editMode && <p>{item.mob}</p>}
                     {editMode && item.id === details.id && (
                       <input
@@ -139,7 +138,7 @@ const Api = () => {
                     )}
                   </div>
                   <div className="segment">
-                    <h4>Contact Person:</h4>
+                    <h4>საკონტაკტო პერსონა:</h4>
                     {!editMode && <p>{item.contact_person}</p>}
                     {editMode && item.id === details.id && (
                       <input
@@ -150,7 +149,18 @@ const Api = () => {
                       />
                     )}
                   </div>
-                  
+                  <div className="segment">
+                    <h4>გამოფენა:</h4>
+                    {!editMode && <p>{item.exhibition}</p>}
+                    {editMode && item.id === details.id && (
+                      <input
+                        type="text"
+                        name="contact_person"
+                        value={details.exhibition}
+                        onChange={handleInputChange}
+                      />
+                    )}
+                  </div>
                     <div className="slide">
                     {!editMode && (
                     <button onClick={() => handleEdit(item)} className="btn">
@@ -183,7 +193,6 @@ const Api = () => {
             ))}
           </ul>
         </Animation>
-        {data.length > 0 && <p>Total Participants: {data.length}</p>}
       </div>
     </div>
   );

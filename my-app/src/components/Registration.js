@@ -21,7 +21,7 @@ const Registration = () => {
     event.preventDefault();
 
     // Send the form data to the server http://10.168.133.11:8000/user/
-    fetch('http://213.131.37.250:8889/user/', {
+    fetch('http://10.168.133.11:8000/user/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const Registration = () => {
       .then((data) => {
         // Handle the response from the server
         console.log(data);
-        // Additional logic or state updates
+        alert("წარმატებით დარეგისტრირდა");
       })
       .catch((error) => {
         alert('An error occurred while submitting the form.');
@@ -42,6 +42,7 @@ const Registration = () => {
 
   const handleChange = (event) => {
     const { name, value, type, checked, files } = event.target;
+    
     // Handle different input types appropriately
     const newValue = type === 'checkbox' ? checked : type === 'file' ? files[0] : value;
 
@@ -57,25 +58,25 @@ const Registration = () => {
     <Animation>
     <div className='reglist'>
       <form onSubmit={handleSubmit}>
-        <label>participant</label>
+        <label>მონაწილე</label>
         <input type="text" name="participant" value={formData.participant} onChange={handleChange} />
-        <label>address1</label>
+        <label>იურიდიული მისმართი</label>
         <input type="text" name="address1" value={formData.address1} onChange={handleChange} />
-        <label>address2</label>
+        <label>ფაქტიური მისამართი</label>
         <input type="text" name="address2" value={formData.address2} onChange={handleChange} />
-        <label>tel</label>
+        <label>ტელეფონი</label>
         <input type="text" name="tel" value={formData.tel} onChange={handleChange} />
-        <label>mob</label>
+        <label>მობილური</label>
         <input type="text" name="mob" value={formData.mob} onChange={handleChange} />
-        <label>email</label>
+        <label>ელექტრონული ფოსტა</label>
         <input type="mail" name="mail" value={formData.mail} onChange={handleChange} />
-        <label>exhibition</label>
+        <label>გამოფენა</label>
         <input type="text" name="exhibition" value={formData.exhibition} defaultValue={'agro'} onChange={handleChange} disabled/>
-        <label>contact_person</label>
+        <label>საკონტაკტო პერსონა</label>
         <input type="text" name="contact_person" value={formData.contact_person} onChange={handleChange} />
-        <label>logo</label>
+        <label>კომპანიის ლოგო</label>
         <input type="file" name="logo" onChange={handleChange} />
-        <label>file</label>
+        <label>დამატებითი ფაილი</label>
         <input type="file" name="file" onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>

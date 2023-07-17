@@ -12,10 +12,22 @@
     flex-direction: column;
 }
 
+
+.info h2 {
+    margin: 10px;
+}
+.lenght {
+    margin: 15px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
 .fetchData {
     display: flex;
-    gap: 10px;
+    padding: 10px 0px;
     justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine;
 }
 .segment {
     background-color: #fff;
@@ -25,9 +37,20 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+
 }
 
 .slide {
     display: flex;
+    margin: 0px 5px;
     gap: 5px;
 }
+
+.btn {
+    background-color: rgb(36, 92, 129);
+}
+
+.delete {
+    background-color: rgb(179, 18, 18);
+}
+
