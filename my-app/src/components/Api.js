@@ -12,10 +12,9 @@ const Api = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://10.168.133.11:8000/user/', {
+      const response = await fetch('http://213.131.37.250:8889/user/', {
         headers: {
           'Content-Type': 'application/json',
-          
         },
       });
       const userReg = await response.json();
@@ -41,7 +40,7 @@ const Api = () => {
   const handleSave = async () => {
     try {
       const response = await fetch(
-        `http://10.168.133.11:8000/user/${details.id}`,
+        `http://213.131.37.250:8889/user/${details.id}`,
         {
           method: 'PUT',
           headers: {
@@ -62,7 +61,7 @@ const Api = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://10.168.133.11:8000/user/${id}`,
+        `http://213.131.37.250:8889/user/${id}`,
         {
           method: 'DELETE',
           headers: {

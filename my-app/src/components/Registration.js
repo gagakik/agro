@@ -21,7 +21,7 @@ const Registration = () => {
     event.preventDefault();
 
     // Send the form data to the server http://10.168.133.11:8000/user/
-    fetch('http://10.168.133.11:8000/user/', {
+    fetch('http://213.131.37.250:8889/user/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const Registration = () => {
     <div className='reglist'>
       <form onSubmit={handleSubmit}>
         <label>მონაწილე</label>
-        <input type="text" name="participant" value={formData.participant} onChange={handleChange} />
+        <input type="text" name="participant" value={formData.participant} onChange={handleChange} placeholder="Enter name"/>
         <label>იურიდიული მისმართი</label>
         <input type="text" name="address1" value={formData.address1} onChange={handleChange} />
         <label>ფაქტიური მისამართი</label>
@@ -69,7 +69,7 @@ const Registration = () => {
         <label>მობილური</label>
         <input type="text" name="mob" value={formData.mob} onChange={handleChange} />
         <label>ელექტრონული ფოსტა</label>
-        <input type="mail" name="mail" value={formData.mail} onChange={handleChange} />
+        <input type="email" name="mail" value={formData.mail} onChange={handleChange} />
         <label>გამოფენა</label>
         <input type="text" name="exhibition" value={formData.exhibition} defaultValue={'agro'} onChange={handleChange} disabled/>
         <label>საკონტაკტო პერსონა</label>
