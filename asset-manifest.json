@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/exposoft-backend/static/css/main.65dd52b2.css",
+    "main.js": "/exposoft-backend/static/js/main.ff841cd2.js",
+    "index.html": "/exposoft-backend/index.html",
+    "main.65dd52b2.css.map": "/exposoft-backend/static/css/main.65dd52b2.css.map",
+    "main.ff841cd2.js.map": "/exposoft-backend/static/js/main.ff841cd2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.65dd52b2.css",
+    "static/js/main.ff841cd2.js"
+  ]
+}
