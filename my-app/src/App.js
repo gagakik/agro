@@ -9,9 +9,8 @@ function App() {
             <nav>
                 <ul>
                     <li><Link className='navi' to='http://expo.com.ge/'>Back</Link></li>
-                    <li><Link className='navi' to='/api'>Company List</Link></li>
                     <li><Link className='navi' to='/Registration'>Registration</Link></li>
-                    <li><Link className='navi' to='/admin'>Admin</Link></li>
+                    <li><Link className='navi' to='/Edit'>Edit</Link></li>
                 </ul>
             </nav>
           </div>

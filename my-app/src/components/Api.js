@@ -2,7 +2,7 @@ import './api.css';
 import App from '../App';
 import Animation from '../components/animation';
 import React, { useEffect, useState } from 'react';
-
+//http://213.131.37.250:8889/user/
 const Api = () => {
   const [data, setData] = useState([]);
 
@@ -12,7 +12,7 @@ const Api = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://213.131.37.250:8889/user/', {
+      const response = await fetch('http://10.168.133.11:8000/user/', {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -40,7 +40,7 @@ const Api = () => {
   const handleSave = async () => {
     try {
       const response = await fetch(
-        `http://213.131.37.250:8889/user/${details.id}`,
+        `http://10.168.133.11:8000/user/${details.id}`,
         {
           method: 'PUT',
           headers: {
@@ -61,7 +61,7 @@ const Api = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://213.131.37.250:8889/user/${id}`,
+        `http://10.168.133.11:8000/user/${id}`,
         {
           method: 'DELETE',
           headers: {

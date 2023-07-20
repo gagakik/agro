@@ -19,6 +19,7 @@ body {
 
 
 .container {
+  margin-top: 20px;
   width: 1440px;
   display: flex;
   flex-direction: column;

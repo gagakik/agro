@@ -23,14 +23,14 @@
   text-decoration: none;
   font-size: 18px;
   font-weight: 700;
-  color: rgb(255, 255, 255);
   display: block;
   cursor: pointer;
-  background-color: rgb(18, 54, 90);
+  color: rgb(18, 54, 90);
   padding: 5px 15px;
   border-radius: 10px;
   width: 120px;
   transition: 0.4s;
+  text-transform: uppercase;
 }
 
 

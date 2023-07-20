@@ -21,7 +21,7 @@ const Registration = () => {
     event.preventDefault();
 
     // Send the form data to the server http://10.168.133.11:8000/user/
-    fetch('http://213.131.37.250:8889/user/', {
+    fetch('http://10.168.133.11:8000/user/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
