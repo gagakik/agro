@@ -3,6 +3,9 @@ import Animation from '../components/animation';
 import './admin.css';
 import App from '../App';
 
+
+//http://10.168.133.11:8000/user/
+
 const Admin = () => {
   const [data, setData] = useState([]);
   const [editedItem, setEditedItem] = useState(null);
@@ -13,7 +16,7 @@ const Admin = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://213.131.37.250:8889/user/');
+      const response = await fetch('http://10.168.133.11:8000/user/');
       const userReg = await response.json();
       setData(userReg);
     } catch (err) {
@@ -23,7 +26,7 @@ const Admin = () => {
 
   const deleteUser = async (id) => {
     try {
-      await fetch(`http://213.131.37.250:8889/user/${id}`, {
+      await fetch(`http://10.168.133.11:8000/user/${id}/`, {
         method: 'DELETE',
       });
       fetchData();
@@ -60,19 +63,19 @@ const Admin = () => {
       file: formData.get("file"),
     };
     try {
-      await fetch(`http://213.131.37.250:8889/user/${editedItem.id}`, {
+      await fetch(`http://10.168.133.11:8000/user/${editedItem.id}/`, {
         method: 'PUT',
         headers: {
-          Referer: 'http://localhost:3000/',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(updatedItem),
       });
       fetchData();
       setEditedItem();
-      console.log(updatedItem);
+      alert('წარმატებით შეიცვალა');
     } catch (err) {
       console.error(err);
+      alert('წარმატებით შეიცვალა');
     }
   };
 
@@ -104,7 +107,10 @@ const Admin = () => {
                     <input type="text" name="exhibition" defaultValue={item.exhibition} />
                     <input type="text" name="contact_person" defaultValue={item.contact_person} />
                     <input type="text" name="price" defaultValue={item.price} />
-                    {/* Add additional input fields for other properties */}
+                    <input type="text" name="payed" defaultValue={item.payed} />
+                    <input type="radio" name="status" defaultValue={item.status} />
+                    <input type="text" name="employer" defaultValue={item.employer} />
+                    <input type="date" name="date" defaultValue={item.date} />
                     <button type="submit" value="Submit">Save</button>
                   </form>
                 ) : (

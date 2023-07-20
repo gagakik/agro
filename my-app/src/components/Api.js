@@ -2,7 +2,7 @@ import './api.css';
 import App from '../App';
 import Animation from '../components/animation';
 import React, { useEffect, useState } from 'react';
-
+//http://213.131.37.250:8889/user/
 const Api = () => {
   const [data, setData] = useState([]);
 
