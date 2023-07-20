@@ -41,6 +41,7 @@ const Admin = () => {
     event.preventDefault();
   
     const formData = new FormData(event.target);
+    
     const updatedItem = {
       participant: formData.get("participant"),
       address1: formData.get("address1"),
@@ -57,9 +58,7 @@ const Admin = () => {
       date: formData.get("date"),
       logo: formData.get("logo"),
       file: formData.get("file"),
-      // Update with other properties as needed
     };
-  
     try {
       await fetch(`http://213.131.37.250:8889/user/${editedItem.id}`, {
         method: 'PUT',
@@ -69,10 +68,9 @@ const Admin = () => {
         },
         body: JSON.stringify(updatedItem),
       });
-  
       fetchData();
       setEditedItem();
-      alert('წარმატებით შეიცვალა');
+      console.log(updatedItem);
     } catch (err) {
       console.error(err);
     }
@@ -110,7 +108,7 @@ const Admin = () => {
                     <button type="submit" value="Submit">Save</button>
                   </form>
                 ) : (
-                  <li className="adfetchData">
+                  <li className="fetchData">
                     <p>Participant: {item.participant}</p>
                     <p>Address 1: {item.address1}</p>
                     <p>Address 2: {item.address2}</p>
